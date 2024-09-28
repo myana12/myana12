@@ -15,7 +15,14 @@ class market:
                 if preference_items in self.items1.keys():
                     self.items.append(preference_items)
                     prefered_quantity=input("enter quantity:")
-                    self.quantity.append(int(prefered_quantity))
+                    change_in_quantity=int(input("is the quantity okay for you: 0 ok or 1 not ok"))
+                    while(change_in_quantity):
+                        if(change_in_quantity==1):
+                            change_in_preference=input("enter change quantity:")
+                            self.quantity.append(int(change_in_preference))
+                        else:
+                            self.quantity.append(int(prefered_quantity))
+                        change_in_quantity=int(input("is the quantity okay for you: 0 ok or 1 not ok"))
                     choice=input("can i bill i items yes or no:")
                     if choice=='yes':
                         print("===================kiran supermarket====================")
